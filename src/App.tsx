@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { CategoryFilter } from './components/CategoryFilter';
@@ -16,15 +16,36 @@ import { PRODUCTS, CATEGORIES, STORE_INFO } from './data/products';
 import { CategoryId, Product, CartItem } from './types';
 import { Sparkles, SlidersHorizontal, Search, ArrowUpDown, RefreshCcw } from 'lucide-react';
 
+const CART_STORAGE_KEY = 'christian_multistore_cart_v1';
+
 export default function App() {
   // State
   const [activeCategory, setActiveCategory] = useState<CategoryId>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'rating'>('featured');
   
-  // Cart state
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  // Cart state with localStorage initialization
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    try {
+      const saved = localStorage.getItem(CART_STORAGE_KEY);
+      if (saved) {
+        return JSON.parse(saved);
+      }
+    } catch (e) {
+      console.error('Erro ao ler carrinho do localStorage:', e);
+    }
+    return [];
+  });
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  // Sync cart with localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));
+    } catch (e) {
+      console.error('Erro ao salvar carrinho no localStorage:', e);
+    }
+  }, [cartItems]);
   
   // Modals & Notifications
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);

@@ -46,9 +46,18 @@ export interface CartItem {
 
 export interface CustomerOrderInfo {
   name: string;
+  cep?: string;
+  street?: string;
+  neighborhood?: string;
   cityState: string;
   paymentMethod: 'pix' | 'cartao';
   notes?: string;
+  shippingOptionId?: string;
+  shippingPrice?: number;
+  shippingName?: string;
+  shippingDeadline?: string;
+  couponCode?: string;
+  couponDiscount?: number;
 }
 
 export interface Review {
