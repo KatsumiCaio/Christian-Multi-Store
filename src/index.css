@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #090A0F;
+    color: #E2E8F0;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.03em;
+  }
+
+  .font-cyber {
+    font-family: 'Plus Jakarta Sans', 'Rajdhani', sans-serif;
+  }
+}
+
+/* Glass & Glow utilities from Bold Typography theme */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-card {
+  background: rgba(19, 21, 31, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cyan-glow {
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+}
+
+.cyan-border {
+  border: 1px solid rgba(0, 229, 255, 0.25);
+}
+
+.purple-glow {
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+/* Custom Utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Neon Glows */
+.neon-glow-cyan {
+  box-shadow: 0 0 25px -5px rgba(0, 229, 255, 0.35);
+}
+
+.neon-glow-cyan-sm {
+  box-shadow: 0 0 12px -2px rgba(0, 229, 255, 0.3);
+}
+
+.neon-glow-purple {
+  box-shadow: 0 0 25px -5px rgba(168, 85, 247, 0.35);
+}
+
+.neon-border-cyan {
+  border-color: rgba(0, 229, 255, 0.4);
+}
+
+.neon-text-glow {
+  text-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+}
+

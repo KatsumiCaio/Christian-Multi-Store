@@ -1,0 +1,48 @@
+import { Review } from '../types';
+
+export const REVIEWS: Review[] = [
+  {
+    id: 'rev-1',
+    name: 'Lucas Mendonça',
+    city: 'Sorocaba / SP',
+    rating: 5,
+    comment: 'Comprei o controle de PS5 e um fone TWS Gamer. Chegou em 1 dia aqui na região, super bem embalado com plástico bolha reforçado. O Christian me atendeu muito rápido no WhatsApp!',
+    date: 'Há 3 dias',
+    productName: 'Controle Sem Fio PS5 + Fone TWS Gamer',
+    avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=150&auto=format&fit=crop',
+    verified: true,
+  },
+  {
+    id: 'rev-2',
+    name: 'Gabriel Ribeiro',
+    city: 'Curitiba / PR',
+    rating: 5,
+    comment: 'Headset Gamer Pro 7.1 surreal de bom! Microfone limpo no Discord e o surround no Warzone faz toda a diferença. Podem comprar sem medo, a loja é 100% de confiança.',
+    date: 'Há 5 dias',
+    productName: 'Headset Gamer Pro 7.1 Surround RGB',
+    avatar: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=150&auto=format&fit=crop',
+    verified: true,
+  },
+  {
+    id: 'rev-3',
+    name: 'Juliana Ferreira',
+    city: 'São Paulo / SP',
+    rating: 5,
+    comment: 'Comprei o Smartwatch Ultra AMOLED e o carregador GaN 35W. O relógio é lindo demais, bateria dura quase uma semana inteira e atendo as ligações nele perfeitamente!',
+    date: 'Há 1 semana',
+    productName: 'Smartwatch Ultra 2.02" AMOLED Titanium',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop',
+    verified: true,
+  },
+  {
+    id: 'rev-4',
+    name: 'Matheus Costa',
+    city: 'Belo Horizonte / MG',
+    rating: 5,
+    comment: 'Já é o terceiro pedido que faço com a Christian Multi Store. Envio rápido pelos Correios com código de rastreamento no mesmo dia da compra. Recomendo para todo mundo!',
+    date: 'Há 2 semanas',
+    productName: 'Power Bank 20.000mAh + Dock PS5',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop',
+    verified: true,
+  },
+];

@@ -1,0 +1,6 @@
+{
+  "name": "Christian Multi Store",
+  "description": "E-commerce e catálogo tech/gamer com fones, smartwatches, acessórios e vídeo games integrado ao WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
