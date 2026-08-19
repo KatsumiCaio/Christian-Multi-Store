@@ -68,3 +68,92 @@ Este arquivo registra todas as entregas e deploys realizados no projeto, associa
 
 ### 🎯 Próximos Passos
 - Implementar Issue #10 (Construtor de Combo "Monte Seu Setup Gamer") e Issue #7 (Atalhos de acessibilidade e tecla ESC).
+
+---
+
+## 🔀 Pull Request #3: Remoção da Seção de Depoimentos e Limpeza de Navegação
+- **Status:** Merged / Deployed
+- **Data:** 19/08/2026
+
+### 🔗 Issue Relacionada
+- Closes #13 (Remoção da seção de depoimentos/avaliações)
+
+### 📝 O que mudou?
+- Removido o componente de depoimentos (`ReviewsSection`) da página inicial (`src/App.tsx`).
+- Atualizada a barra de navegação principal (`src/components/Header.tsx`) para retirar o link "Depoimentos".
+- Atualizado o rodapé (`src/components/Footer.tsx`) na coluna de ajuda para remover o link de depoimentos.
+- Removido o arquivo não utilizado `src/components/ReviewsSection.tsx`.
+
+### 🧪 Como foi validado?
+- `compile_applet` executado com status de sucesso.
+- `lint_applet` executado sem nenhum erro de TypeScript (`tsc --noEmit`).
+- Verificação visual da transição direta entre o banner do Instagram e a seção de FAQ.
+
+### ⚠️ Riscos e Limitações
+- Nenhum risco identificado.
+
+### 🎯 Próximos Passos
+- Continuidade dos itens do backlog em `ISSUES.md`.
+
+---
+
+## 🔀 Pull Request #4: Limpeza da Base de Produtos para Entrada do Catálogo Oficial
+- **Status:** Merged / Deployed
+- **Data:** 19/08/2026
+
+### 🔗 Issue Relacionada
+- Closes #14 (Limpeza da base de produtos para inclusão do catálogo oficial)
+
+### 📝 O que mudou?
+- Zerado o array `PRODUCTS` em `src/data/products.ts` mantendo as 8 categorias e metadados da loja ativos.
+- Implementado estado vazio elegante e minimalista no catálogo (`src/App.tsx`) sinalizando prontidão para receber novos itens.
+- Preservada toda a infraestrutura de carrinho, persistência, cupons e cálculo de frete.
+
+### 🧪 Como foi validado?
+- `compile_applet` e `lint_applet` executados com sucesso (0 erros).
+- Validação do comportamento das categorias e barra de busca com a base zerada.
+
+### ⚠️ Riscos e Limitações
+- O catálogo permanecerá exibindo o estado de prontidão até o envio dos novos produtos.
+
+### 🎯 Próximos Passos
+- Receber a listagem de produtos por categoria enviada pelo usuário e cadastrá-los em `src/data/products.ts`.
+
+---
+
+## 🔀 Pull Request #5: Cadastro Oficial da Linha de Fones Bluetooth & Headsets
+- **Status:** Merged / Deployed
+- **Data:** 19/08/2026
+
+### 🔗 Issue Relacionada
+- Closes #15 (Cadastro oficial da linha de Fones Bluetooth & Headsets)
+
+### 📝 O que mudou?
+- Cadastrados os 11 modelos oficiais de fones Bluetooth e headsets em `src/data/products.ts`:
+  1. `Fone Gamer Bluetooth GM2 Pro Lenovo` (R$ 99,99)
+  2. `Fone Bluetooth M20 com Display LED e Case Power Bank` (R$ 69,99)
+  3. `Fone Bluetooth XT62 Pro Lenovo em Acrílico` (R$ 89,99)
+  4. `Fone Bluetooth TWS i12` (R$ 49,99)
+  5. `Fone Bluetooth A6S com Marcador Digital` (R$ 49,99)
+  6. `Fone Bluetooth LP40 Pro Lenovo` (R$ 99,99)
+  7. `Headset Bluetooth TH10 Lenovo Over-Ear` (R$ 139,99)
+  8. `Fone Bluetooth Inpods i13` (R$ 69,99)
+  9. `Fone Bluetooth UMIDIGI AirBass Hi-Fi` (R$ 89,99)
+  10. `Fone Bluetooth Realfit F3 Compact` (R$ 79,99)
+  11. `Headset Bluetooth P47 com Entrada para Cartão SD` (R$ 44,99)
+- Inseridas todas as especificações técnicas, compatibilidades com iPhone e Android, cases recarregáveis, LEDs e marcadores digitais.
+- Adicionadas imagens temáticas de alta resolução com progressive lazy loading.
+
+### 🧪 Como foi validado?
+- `compile_applet` executado com status de sucesso.
+- `lint_applet` executado com TypeScript 0 erros (`tsc --noEmit`).
+- Testada filtragem pela categoria "Fones Bluetooth", busca textual e adição ao carrinho com geração de link no WhatsApp.
+
+### ⚠️ Riscos e Limitações
+- Nenhuma limitação técnica identificada.
+
+### 🎯 Próximos Passos
+- Cadastrar as próximas categorias conforme envio (Smartwatches, Caixas de Som, Cabos & Carregadores, Eletrônicos & Acessórios, Vídeo Games).
+
+
+

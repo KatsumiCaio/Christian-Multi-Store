@@ -40,7 +40,6 @@ export const Header: React.FC<HeaderProps> = ({
     { name: 'Consoles & Games', href: '#catalogo', action: () => onSelectCategory('video-games') },
     { name: 'Smartwatches', href: '#catalogo', action: () => onSelectCategory('smartwatches') },
     { name: 'Diferenciais', href: '#diferenciais' },
-    { name: 'Depoimentos', href: '#depoimentos' },
     { name: 'Garantia & FAQ', href: '#faq' },
   ];
 

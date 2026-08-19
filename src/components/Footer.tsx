@@ -107,11 +107,6 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCategory }) => {
                 </a>
               </li>
               <li>
-                <a href="#depoimentos" className="hover:text-[#00E5FF] transition-colors">
-                  Depoimentos de Clientes
-                </a>
-              </li>
-              <li>
                 <a href="#faq" className="hover:text-[#00E5FF] transition-colors">
                   Perguntas Frequentes
                 </a>

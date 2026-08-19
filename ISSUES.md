@@ -71,6 +71,24 @@ Este documento centraliza todas as **Issues planejadas e categorizadas** para o 
 
 ---
 
+### [Issue #13] [Melhoria] Remoção da seção de depoimentos/avaliações
+- **Tipo:** `Melhoria` (Enhancement)
+- **Prioridade:** Média
+- **Descrição:** Remoção da seção de depoimentos (reviews) da página inicial e atualização dos links do cabeçalho e rodapé conforme solicitação.
+- **Ação:** Remover o componente `ReviewsSection` do fluxo de renderização e limpar referências no `Header.tsx` e `Footer.tsx`.
+- **Arquivos afetados:** `src/App.tsx`, `src/components/Header.tsx`, `src/components/Footer.tsx`.
+
+---
+
+### [Issue #14] [Melhoria] Limpeza da base de produtos para inclusão do catálogo oficial
+- **Tipo:** `Melhoria` (Enhancement)
+- **Prioridade:** Alta
+- **Descrição:** Zerar a lista de produtos de teste no arquivo `src/data/products.ts` para que o proprietário envie a lista oficial organizada por cada tipo/categoria.
+- **Ação:** Definir `PRODUCTS = []` com tipagem preservada e exibir estado amigável de catálogo pronto para receber novos itens.
+- **Arquivos afetados:** `src/data/products.ts`, `src/App.tsx`.
+
+---
+
 ## ✨ 3. Novas Funções (Features)
 
 ### [Issue #8] [Nova função] Estimador de Frete por CEP (Integração ViaCEP)
@@ -115,3 +133,13 @@ Este documento centraliza todas as **Issues planejadas e categorizadas** para o 
 - **Descrição:** Seção para o cliente entrar na lista VIP de lançamentos e promoções exclusivas da Christian Multi Store no WhatsApp.
 - **Ação:** Adicionar banner/modal de inscrição com botão de entrada direta na lista de transmissão.
 - **Arquivos afetados:** `src/components/VipListBanner.tsx`, `src/App.tsx`.
+
+---
+
+### [Issue #15] [Nova função / Conteúdo] Cadastro Oficial da Linha de Fones Bluetooth & Headsets
+- **Tipo:** `Nova função` (Feature)
+- **Prioridade:** Alta
+- **Descrição:** Cadastro completo dos 11 modelos oficiais de fones Bluetooth e headsets enviados pelo proprietário (Lenovo GM2 Pro, M20 Power Bank, XT62 Pro, TWS i12, A6s com Marcador, LP40 Pro, Headset TH10, Inpods i13, UMIDIGI, Realfit F3 e Headset P47).
+- **Ação:** Inserir os produtos no array `PRODUCTS` com valores exatos (R$), características formatadas, fotos temáticas em alta resolução, badges tech e compatibilidade total com iPhone e Android.
+- **Arquivos afetados:** `src/data/products.ts`.
+

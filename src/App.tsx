@@ -6,7 +6,6 @@ import { ProductCard } from './components/ProductCard';
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { CartDrawer } from './components/CartDrawer';
 import { Diferenciais } from './components/Diferenciais';
-import { ReviewsSection } from './components/ReviewsSection';
 import { InstagramBanner } from './components/InstagramBanner';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
@@ -289,6 +288,24 @@ export default function App() {
                   />
                 ))}
               </div>
+            ) : PRODUCTS.length === 0 ? (
+              /* Ready for New Products State */
+              <div className="text-center py-20 px-6 rounded-3xl bg-[#13151F] border border-dashed border-[#00E5FF]/30 max-w-lg mx-auto space-y-5 glass">
+                <div className="w-16 h-16 rounded-2xl bg-[#00E5FF]/10 border border-[#00E5FF]/20 flex items-center justify-center mx-auto text-[#00E5FF]">
+                  <Sparkles className="w-8 h-8 text-[#00E5FF]" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-black text-white tracking-tight">Catálogo Pronto</h3>
+                  <p className="text-xs text-slate-400 leading-relaxed max-w-sm mx-auto">
+                    Base de produtos zerada com sucesso. Envie os dados e fotos dos produtos de cada categoria para cadastrá-los na loja!
+                  </p>
+                </div>
+                <div className="pt-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    8 Categorias Configuradas
+                  </span>
+                </div>
+              </div>
             ) : (
               /* Empty Search State */
               <div className="text-center py-16 px-4 rounded-3xl bg-[#13151F] border border-white/10 max-w-lg mx-auto space-y-4">
@@ -323,10 +340,7 @@ export default function App() {
         {/* 5. Instagram Community Banner */}
         <InstagramBanner />
 
-        {/* 6. Social Proof Reviews */}
-        <ReviewsSection />
-
-        {/* 7. Interactive FAQ */}
+        {/* 6. Interactive FAQ */}
         <FaqSection />
       </main>
 
