@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, HelpCircle, MessageCircle } from 'lucide-react';
 import { FAQS } from '../data/faq';
 import { STORE_INFO } from '../data/products';
@@ -32,7 +33,7 @@ export const FaqSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Accordion list */}
+        {/* Accordion list with smooth Motion transitions */}
         <div className="space-y-4">
           {FAQS.map((faq) => {
             const isOpen = openId === faq.id;
@@ -42,17 +43,17 @@ export const FaqSection: React.FC = () => {
                 key={faq.id}
                 className={`rounded-3xl border transition-all duration-300 overflow-hidden glass ${
                   isOpen
-                    ? 'bg-[#131522]/90 border-[#00E5FF]/40 shadow-[0_0_25px_rgba(0,229,255,0.12)]'
+                    ? 'bg-[#131522]/95 border-[#00E5FF]/40 shadow-[0_0_25px_rgba(0,229,255,0.12)]'
                     : 'bg-[#13151F]/70 border-white/10 hover:border-white/20'
                 }`}
               >
                 <button
                   onClick={() => toggleFaq(faq.id)}
                   aria-expanded={isOpen}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer active:scale-[0.99] transition-transform"
                 >
                   <div className="flex items-center gap-3.5">
-                    <HelpCircle className={`w-5 h-5 shrink-0 ${isOpen ? 'text-[#00E5FF]' : 'text-slate-400'}`} />
+                    <HelpCircle className={`w-5 h-5 shrink-0 transition-colors ${isOpen ? 'text-[#00E5FF]' : 'text-slate-400'}`} />
                     <span className={`text-sm sm:text-base font-black font-heading tracking-tight ${isOpen ? 'text-white' : 'text-slate-200'}`}>
                       {faq.question}
                     </span>
@@ -66,18 +67,28 @@ export const FaqSection: React.FC = () => {
                   </div>
                 </button>
 
-                {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/5 font-normal">
-                    <p>{faq.answer}</p>
-                  </div>
-                )}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: [0.32, 0.72, 0, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/5 font-normal">
+                        <p>{faq.answer}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             );
           })}
         </div>
 
         {/* Still have questions card */}
-        <div className="mt-10 p-6 sm:p-8 rounded-3xl bg-[#13151F]/90 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left glass">
+        <div className="mt-10 p-6 sm:p-8 rounded-3xl bg-[#13151F]/90 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left glass shadow-lg">
           <div className="space-y-1">
             <h4 className="text-base font-black text-white font-heading tracking-tight">Ainda ficou com alguma dúvida?</h4>
             <p className="text-xs text-slate-400 font-normal">
@@ -87,7 +98,7 @@ export const FaqSection: React.FC = () => {
 
           <button
             onClick={handleOpenWhatsApp}
-            className="px-6 py-3.5 rounded-2xl bg-[#25D366] hover:bg-[#20ba5a] text-black font-black text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 shadow-[0_0_20px_rgba(37,211,102,0.3)] shrink-0 transition-all cursor-pointer"
+            className="px-6 py-3.5 rounded-2xl bg-[#25D366] hover:bg-[#20ba5a] text-black font-black text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 shadow-[0_0_20px_rgba(37,211,102,0.3)] shrink-0 transition-all cursor-pointer active:scale-[0.98]"
           >
             <MessageCircle className="w-4 h-4 fill-current" />
             <span>Falar no WhatsApp</span>
@@ -98,3 +109,4 @@ export const FaqSection: React.FC = () => {
     </section>
   );
 };
+

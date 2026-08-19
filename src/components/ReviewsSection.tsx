@@ -1,7 +1,8 @@
 import React from 'react';
-import { Star, CheckCircle, Quote, Instagram } from 'lucide-react';
+import { Star, CheckCircle, Instagram } from 'lucide-react';
 import { REVIEWS } from '../data/reviews';
 import { STORE_INFO } from '../data/products';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 
 export const ReviewsSection: React.FC = () => {
   return (
@@ -31,7 +32,7 @@ export const ReviewsSection: React.FC = () => {
             href={STORE_INFO.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white/[0.03] border border-pink-500/30 hover:border-pink-500/60 text-slate-200 hover:text-pink-300 transition-all text-xs font-black uppercase tracking-wider shrink-0 self-start md:self-auto glass"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white/[0.03] border border-pink-500/30 hover:border-pink-500/60 text-slate-200 hover:text-pink-300 transition-all text-xs font-black uppercase tracking-wider shrink-0 self-start md:self-auto glass active:scale-[0.98]"
           >
             <Instagram className="w-4 h-4 text-pink-400" />
             <span>@{STORE_INFO.instagram}</span>
@@ -67,11 +68,15 @@ export const ReviewsSection: React.FC = () => {
 
               {/* Customer footer */}
               <div className="pt-4 border-t border-white/5 flex items-center gap-3">
-                <img
-                  src={review.avatar}
-                  alt={review.name}
-                  className="w-10 h-10 rounded-full object-cover border border-[#00E5FF]/40"
-                />
+                <div className="w-10 h-10 rounded-full overflow-hidden border border-[#00E5FF]/40 shrink-0">
+                  <ImageWithSkeleton
+                    src={review.avatar}
+                    alt={review.name}
+                    aspectRatioClass="aspect-square"
+                    className="w-full h-full"
+                    imageClassName="rounded-full"
+                  />
+                </div>
                 <div className="min-w-0">
                   <h4 className="text-xs font-black text-white truncate">
                     {review.name}
@@ -89,3 +94,4 @@ export const ReviewsSection: React.FC = () => {
     </section>
   );
 };
+

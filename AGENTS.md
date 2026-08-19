@@ -69,3 +69,15 @@ Todos os agentes devem seguir rigorosamente as regras da **Taste Skill v2** docu
 - **Física Háptica com Motion**: Efeitos de clique tátil (`active:scale-[0.98]`) e transições em mola (Spring physics `stiffness: 100, damping: 20`).
 - **Sem Emojis em Código ou Badges**: Utilizar ícones SVG limpos do `lucide-react`.
 
+---
+
+## 🎬 5. Design Motion Principles (skills/design-motion-principles/SKILL.md)
+
+Todos os componentes interativos devem seguir os princípios de Emil Kowalski, Jakub Krehel e Jhey Tompkins:
+- **Frequency Gate (Emil)**: Ações de altíssima frequência ou de teclado não recebem animação excessiva.
+- **Fórmula de Entrada e Saída (Jakub)**: Entradas suaves (`opacity: 0 -> 1`, `translateY: 8px -> 0`, `blur: 4px -> 0px`) com saídas mais sutis.
+- **Proibição de `scale(0)`**: Transições de escala sempre iniciam em `0.9`+ para manter a sensação de massa física.
+- **Anti-AI-Slop**: Proibido adicionar loops de pulso (`animate-pulse`) ou glows infinitos em elementos estáticos de UI.
+- **Acessibilidade Obrigatória**: Suporte nativo a `prefers-reduced-motion`.
+
+
