@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <!-- Background Glow -->
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Cyan Glow -->
+    <filter id="cyan-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Linear Gradients -->
+    <linearGradient id="purple-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C084FC" />
+      <stop offset="100%" stop-color="#9333EA" />
+    </linearGradient>
+
+    <linearGradient id="cyan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE" />
+      <stop offset="100%" stop-color="#00E5FF" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Disc Base -->
+  <circle cx="32" cy="32" r="30" fill="#08090E" />
+  
+  <!-- Outer Neon Purple Ring -->
+  <circle cx="32" cy="32" r="28" stroke="url(#purple-grad)" stroke-width="2.5" filter="url(#neon-glow)" />
+
+  <!-- Inner Neon Cyan Ring -->
+  <circle cx="32" cy="32" r="24.5" stroke="url(#cyan-grad)" stroke-width="2" filter="url(#cyan-glow)" />
+
+  <!-- Center Emblem: Cyber Monogram 'CMS' & Brand Title -->
+  <text x="32" y="21" font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-weight="900" font-size="6.5" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">CHRISTIAN</text>
+  
+  <text x="32" y="35" font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-weight="900" font-size="11" fill="#00E5FF" text-anchor="middle" letter-spacing="0.5" filter="url(#cyan-glow)">MULTI</text>
+
+  <text x="32" y="47" font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-weight="900" font-size="8.5" fill="#00E5FF" text-anchor="middle" letter-spacing="1">STORE</text>
+
+  <!-- Tech Dots / Accents -->
+  <circle cx="16" cy="32" r="1.5" fill="#00E5FF" />
+  <circle cx="48" cy="32" r="1.5" fill="#A855F7" />
+</svg>

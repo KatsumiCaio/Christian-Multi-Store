@@ -57,34 +57,48 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full">
-      {/* Top Bar / Faixa de Benefícios */}
-      <div className="bg-[#090A0F]/90 border-b border-white/5 py-2 px-4 text-xs font-medium text-slate-300 glass">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 overflow-x-auto no-scrollbar">
-          <div className="flex items-center gap-6 whitespace-nowrap mx-auto sm:mx-0 text-[11px] font-semibold tracking-wider uppercase">
-            <span className="flex items-center gap-1.5 text-[#00E5FF]">
-              <span className="text-[#00E5FF]">•</span>
+    <header className="sticky top-0 z-40 w-full transition-all duration-300">
+      {/* Top Bar / Faixa de Benefícios e Status */}
+      <div className="bg-[#090A0F]/95 border-b border-white/[0.08] backdrop-blur-md py-1.5 px-4 text-xs">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+          {/* Benefícios à esquerda */}
+          <div className="flex items-center gap-4 sm:gap-6 overflow-x-auto no-scrollbar py-0.5 text-[11px] font-bold tracking-wider uppercase whitespace-nowrap">
+            <div className="flex items-center gap-2 text-[#00E5FF]">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00E5FF] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00E5FF]"></span>
+              </span>
               <span>Loja Online</span>
-            </span>
-            <span className="hidden md:flex items-center gap-1.5 text-slate-400">
+            </div>
+
+            <span className="hidden sm:inline-block text-white/20">•</span>
+
+            <div className="hidden sm:flex items-center gap-1.5 text-slate-300">
               <Truck className="w-3.5 h-3.5 text-[#00E5FF]" />
               <span>Envio para todo o Brasil</span>
-            </span>
-            <span className="hidden lg:flex items-center gap-1.5 text-slate-400">
+            </div>
+
+            <span className="hidden md:inline-block text-white/20">•</span>
+
+            <div className="hidden md:flex items-center gap-1.5 text-slate-300">
               <ShieldCheck className="w-3.5 h-3.5 text-[#A855F7]" />
               <span>Garantia 90 Dias</span>
-            </span>
+            </div>
           </div>
 
+          {/* Status da Loja & WhatsApp Direto à direita */}
           <div className="flex items-center gap-3 shrink-0">
-            <div className="bg-white/5 px-3 py-1 rounded-full border border-white/10 flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
-              <span className="text-[10px] font-extrabold text-white tracking-wider uppercase">Loja Aberta</span>
+            <div className="bg-white/5 px-2.5 py-1 rounded-full border border-white/10 flex items-center gap-1.5">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]"></span>
+              </span>
+              <span className="text-[10px] font-black text-white tracking-wider uppercase">Loja Aberta</span>
             </div>
 
             <button
               onClick={openWhatsAppDirect}
-              className="hidden sm:flex items-center gap-1.5 text-[#25D366] hover:text-emerald-400 transition-colors font-bold text-[11px]"
+              className="hidden sm:flex items-center gap-1.5 text-[#25D366] hover:text-emerald-400 transition-colors font-black text-[11px] cursor-pointer"
             >
               <WhatsAppIcon className="w-3.5 h-3.5 fill-current" />
               <span>{STORE_INFO.whatsappFormatted}</span>
@@ -97,41 +111,40 @@ export const Header: React.FC<HeaderProps> = ({
       <nav
         className={`w-full transition-all duration-300 border-b ${
           isScrolled
-            ? 'bg-[#090A0F]/95 backdrop-blur-xl border-white/10 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.9)]'
-            : 'bg-[#090A0F]/80 backdrop-blur-md border-white/5 py-4'
+            ? 'bg-[#090A0F]/95 backdrop-blur-xl border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.9)]'
+            : 'bg-[#090A0F]/85 backdrop-blur-md border-white/5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-4">
           {/* Logo & Brand Name */}
-          <a href="#inicio" className="flex items-center gap-3 focus:outline-none group">
+          <a href="#inicio" className="flex items-center gap-3 focus:outline-none group shrink-0">
             <Logo size="md" showTextBeside={true} />
           </a>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-1 xl:gap-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => handleLinkClick(link)}
-                className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors py-1 relative group tracking-wide"
+                className="text-xs xl:text-sm font-bold text-slate-300 hover:text-cyan-400 px-3 py-2 rounded-xl hover:bg-white/5 transition-all whitespace-nowrap tracking-wide"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </div>
 
           {/* Action Tools: Search, WhatsApp & Cart Button */}
-          <div className="flex items-center gap-2.5 sm:gap-3">
+          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
             {/* Search Toggle / Input */}
             <div className="relative">
               {showSearchInput ? (
-                <div className="flex items-center bg-[#13151F] border border-cyan-500/40 rounded-full px-3 py-1.5 w-48 sm:w-64 transition-all">
+                <div className="flex items-center bg-[#13151F] border border-cyan-500/40 rounded-xl px-3 h-10 w-48 sm:w-64 transition-all">
                   <Search className="w-4 h-4 text-cyan-400 shrink-0 mr-2" />
                   <input
                     type="text"
-                    placeholder="Buscar fone, game, cabo..."
+                    placeholder="Buscar produto..."
                     value={searchQuery}
                     onChange={(e) => onSearchChange(e.target.value)}
                     autoFocus
@@ -142,7 +155,7 @@ export const Header: React.FC<HeaderProps> = ({
                       setShowSearchInput(false);
                       onSearchChange('');
                     }}
-                    className="text-slate-400 hover:text-white ml-1"
+                    className="text-slate-400 hover:text-white ml-1 cursor-pointer"
                   >
                     <X className="w-3.5 h-3.5" />
                   </button>
@@ -151,7 +164,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <button
                   onClick={() => setShowSearchInput(true)}
                   aria-label="Pesquisar produtos"
-                  className="p-2 rounded-xl bg-[#13151F] hover:bg-[#1A1E2C] border border-white/10 text-slate-300 hover:text-cyan-400 transition-all"
+                  className="h-10 w-10 rounded-xl bg-[#13151F] hover:bg-[#1A1E2C] border border-white/10 hover:border-cyan-500/40 text-slate-300 hover:text-cyan-400 transition-all flex items-center justify-center cursor-pointer"
                 >
                   <Search className="w-4 h-4" />
                 </button>
@@ -161,7 +174,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Direct WhatsApp Action Button */}
             <button
               onClick={openWhatsAppDirect}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] hover:bg-[#25D366]/20 transition-all text-xs font-semibold"
+              className="hidden sm:inline-flex items-center gap-2 h-10 px-3.5 rounded-xl bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/30 text-[#25D366] transition-all text-xs font-bold whitespace-nowrap cursor-pointer active:scale-95"
             >
               <WhatsAppIcon className="w-4 h-4 fill-current" />
               <span>WhatsApp</span>
@@ -172,19 +185,19 @@ export const Header: React.FC<HeaderProps> = ({
               id="header-cart-btn"
               onClick={onOpenCart}
               aria-label="Abrir carrinho de compras"
-              className="relative flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-cyan-500/15 via-[#161B2E] to-purple-500/15 hover:from-cyan-500/25 hover:to-purple-500/25 border border-cyan-400/30 text-white shadow-[0_0_15px_rgba(0,229,255,0.15)] transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="relative flex items-center gap-3 h-10 px-3.5 sm:px-4 rounded-xl bg-gradient-to-r from-cyan-500/15 via-[#161B2E] to-purple-500/15 hover:from-cyan-500/25 hover:to-purple-500/25 border border-cyan-400/30 text-white shadow-[0_0_15px_rgba(0,229,255,0.15)] transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer whitespace-nowrap"
             >
-              <div className="relative">
-                <ShoppingCart className="w-5 h-5 text-cyan-400" />
+              <div className="relative flex items-center justify-center">
+                <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-2.5 -right-2.5 bg-gradient-to-r from-cyan-400 to-cyan-500 text-black font-extrabold text-[10px] w-5 h-5 rounded-full flex items-center justify-center shadow-[0_0_10px_rgba(0,229,255,0.8)] animate-pulse">
+                  <span className="absolute -top-2 -right-2.5 bg-[#00E5FF] text-black font-black text-[9px] w-4 h-4 rounded-full flex items-center justify-center shadow-[0_0_8px_rgba(0,229,255,0.8)]">
                     {cartCount > 9 ? '9+' : cartCount}
                   </span>
                 )}
               </div>
-              <div className="hidden sm:flex flex-col text-left leading-tight">
-                <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Meu Pedido</span>
-                <span className="text-xs font-bold text-cyan-300">
+              <div className="hidden sm:flex flex-col text-left leading-none">
+                <span className="text-[9px] text-slate-400 uppercase font-black tracking-wider">Meu Pedido</span>
+                <span className="text-xs font-black text-cyan-300 mt-0.5">
                   {cartTotal > 0 ? `R$ ${cartTotal.toFixed(2).replace('.', ',')}` : 'R$ 0,00'}
                 </span>
               </div>
@@ -193,7 +206,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Mobile Hamburger Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl bg-[#13151F] border border-white/10 text-slate-300 hover:text-white"
+              className="lg:hidden h-10 w-10 rounded-xl bg-[#13151F] border border-white/10 text-slate-300 hover:text-white flex items-center justify-center cursor-pointer"
               aria-label="Menu de navegação"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

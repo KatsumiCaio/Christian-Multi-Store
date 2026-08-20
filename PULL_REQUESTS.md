@@ -278,7 +278,38 @@ Este arquivo registra todas as entregas e deploys realizados no projeto, associa
 - Nenhuma limitação técnica identificada.
 
 ### 🎯 Próximos Passos
-- Cadastrar as próximas categorias enviadas pelo proprietário (Eletrônicos & Acessórios, Vídeo Games).
+- Quando o proprietário enviar lotes específicos ou fotos personalizadas adicionais para estas categorias, os dados podem ser refinados pontualmente.
+
+---
+
+## 🔀 Pull Request #11: Reestruturação e Alinhamento Óptico do Header & TopBar
+- **Status:** Merged / Deployed
+- **Data:** 20/08/2026
+
+### 🔗 Issue Relacionada
+- Closes #21 (Reestruturação e Alinhamento Preciso do Header & TopBar)
+- Relacionado à Issue #11 (Logotipo oficial do WhatsApp)
+
+### 📝 O que mudou?
+- **Alinhamento Vertical Preciso**:
+  - Unificada a altura de todos os botões de ação à direita (`h-10` = 40px) para Pesquisa, WhatsApp e Meu Pedido (Carrinho), garantindo linha de centro perfeita.
+  - Alinhamento óptico do logotipo (`Logo.tsx`) e seu texto descritivo "GAMES & ELETRÔNICOS PREMIUM".
+- **Top Utility Bar Refinada**:
+  - Destaque com indicador pulsante neon para `Loja Online`, pontos divisores sutis e alinhamento com os benefícios `Envio para todo o Brasil` e `Garantia 90 Dias`.
+  - Badge `Loja Aberta` com ponto verde animado e número oficial de WhatsApp alinhados à direita.
+- **Prevenção de Quebras de Linha (`whitespace-nowrap`)**:
+  - Links de navegação desktop formatados com `whitespace-nowrap` e espaçamento rítmico proporcional (`px-3 py-2 rounded-xl hover:bg-white/5`), eliminando truncamentos e quebras indesejadas em qualquer resolução desktop.
+
+### 🧪 Como foi validado?
+- `compile_applet` executado e compilado com sucesso.
+- `lint_applet` (`tsc --noEmit`) executado com 0 erros de tipagem.
+- Verificação visual de alinhamento entre o logotipo, menu, barra de busca, botão do WhatsApp e carrinho.
+
+### ⚠️ Riscos e Limitações
+- Nenhuma regressão detectada.
+
+### 🎯 Próximos Passos
+- Monitorar a experiência de navegação e conversão no desktop e mobile.
 
 ---
 
@@ -315,6 +346,38 @@ Este arquivo registra todas as entregas e deploys realizados no projeto, associa
 
 ### 🎯 Próximos Passos
 - Quando o proprietário enviar lotes específicos ou fotos personalizadas adicionais para estas categorias, os dados podem ser refinados pontualmente.
+
+---
+
+## 🔀 Pull Request #12: Favicon e Ícones de Navegador Oficiais (SVG & PWA)
+- **Status:** Merged / Deployed
+- **Data:** 20/08/2026
+
+### 🔗 Issue Relacionada
+- Closes #22 (Criação do Favicon e Ícones de Navegador Oficiais)
+
+### 📝 O que mudou?
+- **Favicon Vetorial SVG (`/public/favicon.svg`)**:
+  - Criado o ícone oficial em SVG com o anel duplo neon da Christian Multi Store (`#00E5FF` Cyan e `#A855F7` Purple), fundo escuro (`#08090E`), filtros de glow e tipografia marcante da marca.
+  - Perfeita nitidez em abas de navegadores (Chrome, Safari, Edge, Firefox) em temas claro e escuro.
+- **Ícone de Alta Resolução (`/public/icon.svg`)**:
+  - Resolução vetorial 512x512 para atalhos na tela de início, Apple Touch Icon e PWA.
+- **Manifesto Web (`/public/site.webmanifest`)**:
+  - Configuração de nome, cores de tema (`#090A0F`) e referências a ícones maskable.
+- **Atualização do `index.html`**:
+  - Inseridas tags `<link rel="icon">`, `<link rel="apple-touch-icon">`, `<link rel="manifest">` e meta tags de app móvel.
+
+### 🧪 Como foi validado?
+- `compile_applet` executado com sucesso.
+- `lint_applet` (`tsc --noEmit`) sem erros.
+- Validação do carregamento dos arquivos estáticos na raiz (`/favicon.svg`, `/icon.svg`, `/site.webmanifest`).
+
+### ⚠️ Riscos e Limitações
+- Nenhuma limitação técnica identificada.
+
+### 🎯 Próximos Passos
+- Ícones ativos e prontos para navegação em desktop, mobile e instalação na tela inicial.
+
 
 
 

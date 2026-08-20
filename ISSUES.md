@@ -188,6 +188,16 @@ Este documento centraliza todas as **Issues planejadas e categorizadas** para o 
 - **Ação:** Inserir 6 itens em `eletronicos-acessorios` (Power Banks, Suporte Veicular, Hub USB-C, Ring Light, Mini Teclado Smart TV) e 5 itens em `video-games` (Controle PS4/PC, Controle Gamer Celular, Dock Carregador PS5, Game Portátil Retrô 400 Jogos, Capa Silicone + Grips).
 - **Arquivos afetados:** `src/data/products.ts`.
 
+---
+
+### [Issue #22] [Nova função / Branding] Criação do Favicon e Ícones de Navegador Oficiais
+- **Tipo:** `Nova função` (Feature)
+- **Prioridade:** Alta
+- **Descrição:** Implementação de favicon vetorial (SVG) de alta nitidez com o emblema de dois anéis neon da Christian Multi Store, suporte a Apple Touch Icon para dispositivos móveis, arquivo de manifesto PWA (`site.webmanifest`) e tags meta para navegadores modernos.
+- **Ação:** Criar `public/favicon.svg`, `public/icon.svg`, `public/site.webmanifest` e atualizar o cabeçalho de `index.html`.
+- **Arquivos afetados:** `public/favicon.svg`, `public/icon.svg`, `public/site.webmanifest`, `index.html`.
+
+
 
 
 

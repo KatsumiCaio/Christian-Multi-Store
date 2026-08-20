@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <!-- Background Radial Gradient -->
+    <radialGradient id="bg-glow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#131626" />
+      <stop offset="70%" stop-color="#090A0F" />
+      <stop offset="100%" stop-color="#05060A" />
+    </radialGradient>
+
+    <!-- Purple Neon Glow Filter -->
+    <filter id="purple-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Cyan Neon Glow Filter -->
+    <filter id="cyan-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="purple-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D8B4FE" />
+      <stop offset="50%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#7E22CE" />
+    </linearGradient>
+
+    <linearGradient id="cyan-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#67E8F9" />
+      <stop offset="50%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background with subtle corner curve for app icon -->
+  <rect width="512" height="512" rx="128" fill="url(#bg-glow)" />
+
+  <!-- Outer Neon Purple Ring -->
+  <circle cx="256" cy="256" r="210" stroke="url(#purple-stroke)" stroke-width="16" filter="url(#purple-glow)" />
+
+  <!-- Inner Neon Cyan Ring -->
+  <circle cx="256" cy="256" r="176" stroke="url(#cyan-stroke)" stroke-width="14" filter="url(#cyan-glow)" />
+
+  <!-- Center Typography -->
+  <!-- CHRISTIAN -->
+  <text x="256" y="180" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="44" fill="#FFFFFF" text-anchor="middle" letter-spacing="6">CHRISTIAN</text>
+
+  <!-- MULTI -->
+  <text x="256" y="280" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="88" fill="#00E5FF" text-anchor="middle" letter-spacing="4" filter="url(#cyan-glow)">MULTI</text>
+
+  <!-- STORE -->
+  <text x="256" y="360" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="64" fill="#00E5FF" text-anchor="middle" letter-spacing="8">STORE</text>
+
+  <!-- GAMES & ELETRÔNICOS SUBTITLE -->
+  <text x="256" y="415" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="700" font-size="18" fill="#94A3B8" text-anchor="middle" letter-spacing="4">GAMES &amp; ELETRÔNICOS PREMIUM</text>
+
+  <!-- Side Tech Accents -->
+  <circle cx="110" cy="256" r="8" fill="#00E5FF" filter="url(#cyan-glow)" />
+  <circle cx="402" cy="256" r="8" fill="#A855F7" filter="url(#purple-glow)" />
+</svg>
