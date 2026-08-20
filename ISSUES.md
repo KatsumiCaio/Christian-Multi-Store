@@ -161,5 +161,25 @@ Este documento centraliza todas as **Issues planejadas e categorizadas** para o 
 - **Ação:** Inserir as caixas de som no array `PRODUCTS` sob a categoria `caixas-som` com valores exatos (R$), potência 10W, iluminação LED que troca de cor, entradas USB/SD/P2, rádio FM, alça de transporte e fotos em alta resolução.
 - **Arquivos afetados:** `src/data/products.ts`.
 
+---
+
+### [Issue #18] [Nova função / Conteúdo] Cadastro Oficial da Linha de Cabos & Carregadores Turbo
+- **Tipo:** `Nova função` (Feature)
+- **Prioridade:** Alta
+- **Descrição:** Cadastro completo dos cabos e carregadores turbo oficiais enviados pelo proprietário (Cabo Tipo C / iPhone 30W, Cabo Tipo C Duplo 65W, Cabo para iPhone 1m, Cabo Tipo C para Android 1m, Carregador Turbo Completo Android com Fonte, Carregador Turbo Completo iPhone com Fonte, Cabo Turbo iPhone 2m, Cabo Turbo Android 2m e Cabo 2m Linha Econômica).
+- **Ação:** Inserir os produtos sob a categoria `cabos-carregadores` no array `PRODUCTS` com valores exatos (R$), potências de carga rápida, comprimentos de 1m e 2m, materiais reforçados e compatibilidades detalhadas.
+- **Arquivos afetados:** `src/data/products.ts`.
+
+---
+
+### [Issue #19] [Nova função / Conteúdo] Cadastro Oficial da Linha de Fones de Ouvido com Fio
+- **Tipo:** `Nova função` (Feature)
+- **Prioridade:** Alta
+- **Descrição:** Cadastro dos 4 modelos oficiais de fones de ouvido com fio enviados pelo proprietário (Fone com Fio Entrada Tipo C, Fone de Ouvido Lelong com Borrachinhas + 4 Extras P2, Fone de Ouvido PMCell com Borrachinhas P2 e Fone de Ouvido Lelong sem Borrachinha P2).
+- **Ação:** Inserir os modelos sob a categoria `fones-fio` no array `PRODUCTS` com valores exatos (R$), conectores Tipo C e P2 (3.5mm), microfones embutidos para chamadas e áudios, ponteiras de silicone e alta fidelidade sonora.
+- **Arquivos afetados:** `src/data/products.ts`.
+
+
+
 
 

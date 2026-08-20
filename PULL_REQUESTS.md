@@ -217,6 +217,71 @@ Este arquivo registra todas as entregas e deploys realizados no projeto, associa
 ### 🎯 Próximos Passos
 - Cadastrar as próximas categorias enviadas pelo proprietário (Cabos & Carregadores, Eletrônicos & Acessórios, Vídeo Games, Fones com Fio).
 
+---
+
+## 🔀 Pull Request #8: Cadastro Oficial da Linha de Cabos & Carregadores Turbo
+- **Status:** Merged / Deployed
+- **Data:** 20/08/2026
+
+### 🔗 Issue Relacionada
+- Closes #18 (Cadastro oficial da linha de Cabos & Carregadores Turbo)
+
+### 📝 O que mudou?
+- Cadastrados os 9 modelos e kits oficiais de cabos e carregadores em `src/data/products.ts`:
+  1. `Cabo Turbo Type-C para iPhone (Lightning) 30W - 1 Metro` (R$ 19,99)
+  2. `Cabo Tipo C Duplo (Type-C para Type-C) 65W Turbo - 1 Metro` (R$ 19,99)
+  3. `Cabo para iPhone Lightning USB - 1 Metro` (R$ 14,99)
+  4. `Cabo Tipo C para Android USB - 1 Metro` (R$ 14,99)
+  5. `Carregador Turbo Completo para Android (Fonte + Cabo Tipo C)` (R$ 34,99)
+  6. `Carregador Turbo Completo para iPhone (Fonte + Cabo)` (R$ 34,99)
+  7. `Cabo Turbo para iPhone - 2 Metros Reforçado` (R$ 24,99)
+  8. `Cabo Turbo Tipo C para Android - 2 Metros Reforçado` (R$ 24,99)
+  9. `Cabo de Carregamento 2 Metros (Opção iPhone ou Tipo C)` (R$ 19,99)
+- Detalhadas potências de carregamento rápido (30W, 65W e turbo), comprimentos (1m e 2m), materiais reforçados anti-ruptura e compatibilidade total com iPhone 15/16, linha Lightning e marcas Android (Samsung, Motorola, Xiaomi, Asus, Poco, Lenovo).
+- Inseridas imagens em alta resolução com progressive lazy loading.
+
+### 🧪 Como foi validado?
+- `compile_applet` executado com status verde de compilação.
+- `lint_applet` executado com TypeScript 0 erros (`tsc --noEmit`).
+- Testada filtragem pela categoria "Cabos e Carregadores" (9 itens na categoria, 32 itens no catálogo total), seleção de itens para carrinho e formatação dos valores em R$.
+
+### ⚠️ Riscos e Limitações
+- Nenhuma limitação identificada.
+
+### 🎯 Próximos Passos
+- Cadastrar as próximas categorias enviadas pelo proprietário (Eletrônicos & Acessórios, Vídeo Games, Fones com Fio).
+
+---
+
+## 🔀 Pull Request #9: Cadastro Oficial da Linha de Fones de Ouvido com Fio
+- **Status:** Merged / Deployed
+- **Data:** 20/08/2026
+
+### 🔗 Issue Relacionada
+- Closes #19 (Cadastro oficial da linha de Fones de Ouvido com Fio)
+
+### 📝 O que mudou?
+- Cadastrados os 4 modelos oficiais de fones de ouvido com fio em `src/data/products.ts`:
+  1. `Fone de Ouvido com Fio Intra-Auricular - Entrada Tipo C` (R$ 21,99)
+  2. `Fone de Ouvido com Fio Lelong P2 com Borrachinhas (+ 4 Extras)` (R$ 19,99)
+  3. `Fone de Ouvido com Fio PMCell Intra-Auricular P2` (R$ 14,99)
+  4. `Fone de Ouvido com Fio Lelong Semi-In-Ear P2 (Sem Borrachinha)` (R$ 19,99)
+- Detalhadas as características técnicas: conector digital Tipo C, conectores P2 banhados a ouro, microfones com controle integrado no cabo para atender chamadas e enviar áudios, ponteiras de silicone (com 4 extras no modelo Lelong) e modelo semi-in-ear ergonômico.
+- Ajustada a categoria `fones-fio` com nome e descrição refinados.
+
+### 🧪 Como foi validado?
+- `compile_applet` executado com status de sucesso.
+- `lint_applet` executado com TypeScript 0 erros (`tsc --noEmit`).
+- Testada navegação e filtragem na categoria "Fones de Ouvido com Fio" (4 itens na categoria, 36 itens no catálogo total).
+
+### ⚠️ Riscos e Limitações
+- Nenhuma limitação técnica identificada.
+
+### 🎯 Próximos Passos
+- Cadastrar as próximas categorias enviadas pelo proprietário (Eletrônicos & Acessórios, Vídeo Games).
+
+
+
 
 
 
