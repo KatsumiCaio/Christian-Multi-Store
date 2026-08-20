@@ -143,3 +143,13 @@ Este documento centraliza todas as **Issues planejadas e categorizadas** para o 
 - **Ação:** Inserir os produtos no array `PRODUCTS` com valores exatos (R$), características formatadas, fotos temáticas em alta resolução, badges tech e compatibilidade total com iPhone e Android.
 - **Arquivos afetados:** `src/data/products.ts`.
 
+---
+
+### [Issue #16] [Nova função / Conteúdo] Cadastro Oficial da Linha de Smartwatches & Kits Inteligentes
+- **Tipo:** `Nova função` (Feature)
+- **Prioridade:** Alta
+- **Descrição:** Cadastro completo dos 9 modelos oficiais de smartwatches e kits enviados pelo proprietário (Zeblaze Btalk 2 Lite, Zeblaze GTS 3, Kit T900 Ultra + Fone Bluetooth, Kit 7 em 1 S100 Ultra, T10 Ultra, W29s Microwear com ChatGPT/GPS, Zeblaze Btalk 3 Plus, Kit H10 Mini 41mm e Zeblaze Beyond 3 Pro com GPS/À prova d'água).
+- **Ação:** Inserir os smartwatches no array `PRODUCTS` com valores exatos (R$), funções de monitoramento de saúde, integração com Strava, chamadas Bluetooth, pulseiras extras e fotos em alta resolução.
+- **Arquivos afetados:** `src/data/products.ts`.
+
+

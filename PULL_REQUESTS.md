@@ -155,5 +155,40 @@ Este arquivo registra todas as entregas e deploys realizados no projeto, associa
 ### 🎯 Próximos Passos
 - Cadastrar as próximas categorias conforme envio (Smartwatches, Caixas de Som, Cabos & Carregadores, Eletrônicos & Acessórios, Vídeo Games).
 
+---
+
+## 🔀 Pull Request #6: Cadastro Oficial da Linha de Smartwatches & Kits Inteligentes
+- **Status:** Merged / Deployed
+- **Data:** 20/08/2026
+
+### 🔗 Issue Relacionada
+- Closes #16 (Cadastro oficial da linha de Smartwatches & Kits Inteligentes)
+
+### 📝 O que mudou?
+- Cadastrados os 9 modelos e kits oficiais de Smartwatches em `src/data/products.ts`:
+  1. `Smartwatch Zeblaze Btalk 2 Lite` (R$ 149,99)
+  2. `Smartwatch Zeblaze GTS 3` (R$ 119,99)
+  3. `Kit Smartwatch T900 Ultra + Fone Bluetooth + 2 Pulseiras` (R$ 169,99)
+  4. `Kit Smartwatch 7 em 1 S100 Ultra com 7 Pulseiras` (R$ 149,99)
+  5. `Smartwatch T10 Ultra com Carregamento por Indução` (R$ 139,99)
+  6. `Smartwatch W29s Microwear com ChatGPT, GPS e Ilha Dinâmica` (R$ 219,99)
+  7. `Smartwatch Zeblaze Btalk 3 Plus` (R$ 149,99)
+  8. `Kit Smartwatch H10 Mini 41mm com 3 Pulseiras` (R$ 149,99)
+  9. `Smartwatch Zeblaze Beyond 3 Pro com GPS e Resistência à Água` (R$ 279,99)
+- Detalhadas todas as funcionalidades: chamadas Bluetooth, sincronia com Strava, monitor de batimentos e SpO2, carregamento por indução magnética, ilha dinâmica, ChatGPT integrado e suporte a foto na tela.
+- Inseridas imagens em alta resolução otimizadas para exibição no catálogo com skeletons e lazy loading.
+
+### 🧪 Como foi validado?
+- `compile_applet` executado com status verde de compilação.
+- `lint_applet` executado com TypeScript 0 erros (`tsc --noEmit`).
+- Testada filtragem pela categoria "Smartwatches", contagem de produtos (9 itens na categoria, 20 itens no catálogo total) e fluxo de adição ao carrinho.
+
+### ⚠️ Riscos e Limitações
+- Nenhuma limitação identificada.
+
+### 🎯 Próximos Passos
+- Cadastrar as próximas categorias enviadas pelo proprietário (Caixas de Som, Cabos & Carregadores, Eletrônicos & Acessórios, Vídeo Games).
+
+
 
 
