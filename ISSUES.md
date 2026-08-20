@@ -179,6 +179,16 @@ Este documento centraliza todas as **Issues planejadas e categorizadas** para o 
 - **Ação:** Inserir os modelos sob a categoria `fones-fio` no array `PRODUCTS` com valores exatos (R$), conectores Tipo C e P2 (3.5mm), microfones embutidos para chamadas e áudios, ponteiras de silicone e alta fidelidade sonora.
 - **Arquivos afetados:** `src/data/products.ts`.
 
+---
+
+### [Issue #20] [Nova função / Conteúdo] Cadastro de Produtos Modelo para Eletrônicos & Acessórios e Vídeo Games
+- **Tipo:** `Nova função` (Feature)
+- **Prioridade:** Alta
+- **Descrição:** Criação e cadastro de produtos modelo de alta demanda para as categorias restantes `eletronicos-acessorios` e `video-games`, garantindo que todas as categorias da Christian Multi Store tenham produtos completos com fotos HD, especificações, preços em R$, badges tech e compatibilidade.
+- **Ação:** Inserir 6 itens em `eletronicos-acessorios` (Power Banks, Suporte Veicular, Hub USB-C, Ring Light, Mini Teclado Smart TV) e 5 itens em `video-games` (Controle PS4/PC, Controle Gamer Celular, Dock Carregador PS5, Game Portátil Retrô 400 Jogos, Capa Silicone + Grips).
+- **Arquivos afetados:** `src/data/products.ts`.
+
+
 
 
 

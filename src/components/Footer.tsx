@@ -1,6 +1,7 @@
 import React from 'react';
-import { Instagram, MessageCircle, ShieldCheck, Truck, Clock, MapPin, QrCode, CreditCard, Heart } from 'lucide-react';
+import { Instagram, ShieldCheck, Truck, Clock, MapPin, QrCode, CreditCard, Heart } from 'lucide-react';
 import { Logo } from './Logo';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { STORE_INFO, CATEGORIES } from '../data/products';
 
 interface FooterProps {
@@ -53,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCategory }) => {
                 onClick={openWhatsApp}
                 className="p-3 rounded-2xl bg-[#13151F] border border-white/10 hover:border-[#25D366]/50 text-slate-300 hover:text-[#25D366] transition-all flex items-center gap-2 font-black text-xs cursor-pointer"
               >
-                <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                <WhatsAppIcon className="w-4 h-4 fill-[#25D366]" />
                 <span>{STORE_INFO.whatsappFormatted}</span>
               </button>
             </div>

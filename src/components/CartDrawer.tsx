@@ -7,7 +7,6 @@ import {
   Trash2, 
   ShoppingBag, 
   Truck, 
-  MessageCircle, 
   CreditCard, 
   QrCode, 
   Tag, 
@@ -16,6 +15,7 @@ import {
   MapPin, 
   AlertCircle 
 } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { CartItem, CustomerOrderInfo } from '../types';
 import { STORE_INFO } from '../data/products';
 import { fetchCepAddress, calculateShippingOptions, ShippingOption } from '../services/cep';
@@ -688,7 +688,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                     form="checkout-form"
                     className="w-full bg-[#25D366] text-black py-4 rounded-2xl font-black text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(37,211,102,0.35)] hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer whitespace-nowrap"
                   >
-                    <MessageCircle className="w-4 h-4 fill-current" />
+                    <WhatsAppIcon className="w-5 h-5 fill-current" />
                     <span>Finalizar via WhatsApp</span>
                   </button>
 

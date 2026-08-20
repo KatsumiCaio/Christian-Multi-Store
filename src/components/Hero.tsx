@@ -1,6 +1,7 @@
 import React from 'react';
-import { ArrowRight, MessageCircle, ShieldCheck, Instagram, Zap, Award, Sparkles, Gamepad2, Headphones, Watch } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Instagram, Zap, Award, Sparkles, Gamepad2, Headphones, Watch } from 'lucide-react';
 import { Logo } from './Logo';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { STORE_INFO } from '../data/products';
 
 interface HeroProps {
@@ -83,7 +84,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onOpenWhatsApp }) =>
                 onClick={onOpenWhatsApp}
                 className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba5a] text-black font-black text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-[0_0_25px_rgba(37,211,102,0.35)] transform hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer whitespace-nowrap"
               >
-                <MessageCircle className="w-4 h-4 fill-current" />
+                <WhatsAppIcon className="w-5 h-5 fill-current" />
                 <span>Chamar no WhatsApp</span>
               </button>
             </div>

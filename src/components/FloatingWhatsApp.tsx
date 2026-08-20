@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { MessageCircle, X } from 'lucide-react';
+import { X } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { STORE_INFO } from '../data/products';
 
 export const FloatingWhatsApp: React.FC = () => {
@@ -43,9 +44,9 @@ export const FloatingWhatsApp: React.FC = () => {
       <button
         onClick={openWhatsApp}
         aria-label="Chamar Christian no WhatsApp"
-        className="relative group p-4 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-black shadow-[0_0_25px_rgba(37,211,102,0.6)] hover:shadow-[0_0_35px_rgba(37,211,102,0.8)] transition-all transform hover:scale-110 active:scale-95 flex items-center justify-center"
+        className="relative group p-3.5 sm:p-4 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-[0_0_25px_rgba(37,211,102,0.6)] hover:shadow-[0_0_35px_rgba(37,211,102,0.8)] transition-all transform hover:scale-110 active:scale-95 flex items-center justify-center cursor-pointer"
       >
-        <MessageCircle className="w-7 h-7 fill-current" />
+        <WhatsAppIcon className="w-7 h-7 fill-white" />
         <span className="sr-only">WhatsApp</span>
         
         {/* Pulse Ring */}

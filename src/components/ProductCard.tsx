@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Star, Plus, Check, Eye, ShieldCheck, Zap, MessageCircle, Loader2 } from 'lucide-react';
+import { Star, Plus, Check, Eye, ShieldCheck, Zap, Loader2 } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { Product } from '../types';
 import { STORE_INFO } from '../data/products';
 import { ImageWithSkeleton } from './ImageWithSkeleton';
@@ -196,7 +197,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               title="Dúvida direta no WhatsApp"
               className="hidden sm:flex col-span-1 items-center justify-center rounded-2xl bg-white/5 hover:bg-[#25D366]/20 border border-white/10 hover:border-[#25D366]/40 text-slate-300 hover:text-[#25D366] transition-all p-2 cursor-pointer active:scale-[0.95]"
             >
-              <MessageCircle className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4 fill-current" />
             </button>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingCart, MessageCircle, Menu, X, Search, ShieldCheck, Truck, Zap } from 'lucide-react';
+import { ShoppingCart, Menu, X, Search, ShieldCheck, Truck, Zap } from 'lucide-react';
 import { Logo } from './Logo';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { STORE_INFO } from '../data/products';
 
 interface HeaderProps {
@@ -85,7 +86,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={openWhatsAppDirect}
               className="hidden sm:flex items-center gap-1.5 text-[#25D366] hover:text-emerald-400 transition-colors font-bold text-[11px]"
             >
-              <MessageCircle className="w-3.5 h-3.5 fill-current" />
+              <WhatsAppIcon className="w-3.5 h-3.5 fill-current" />
               <span>{STORE_INFO.whatsappFormatted}</span>
             </button>
           </div>
@@ -162,7 +163,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={openWhatsAppDirect}
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] hover:bg-[#25D366]/20 transition-all text-xs font-semibold"
             >
-              <MessageCircle className="w-4 h-4 fill-current" />
+              <WhatsAppIcon className="w-4 h-4 fill-current" />
               <span>WhatsApp</span>
             </button>
 
@@ -234,7 +235,7 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={openWhatsAppDirect}
                 className="w-full py-3 rounded-xl bg-[#25D366] text-black font-bold text-sm flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(37,211,102,0.3)]"
               >
-                <MessageCircle className="w-4 h-4 fill-current" />
+                <WhatsAppIcon className="w-4 h-4 fill-current" />
                 <span>Chamar Christian no WhatsApp</span>
               </button>
             </div>

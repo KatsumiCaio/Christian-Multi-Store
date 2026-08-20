@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Star, Plus, Minus, Check, MessageCircle, ShieldCheck, Truck, Zap } from 'lucide-react';
+import { X, Star, Plus, Minus, Check, ShieldCheck, Truck, Zap } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { Product } from '../types';
 import { STORE_INFO } from '../data/products';
 import { ImageWithSkeleton } from './ImageWithSkeleton';
@@ -220,7 +221,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                       onClick={handleDirectWhatsApp}
                       className="w-full py-4 px-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba5a] text-black font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(37,211,102,0.35)] transition-all cursor-pointer active:scale-[0.98]"
                     >
-                      <MessageCircle className="w-4 h-4 fill-current" />
+                      <WhatsAppIcon className="w-4 h-4 fill-current" />
                       <span>Pedir no WhatsApp</span>
                     </button>
                   </div>

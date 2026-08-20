@@ -280,6 +280,43 @@ Este arquivo registra todas as entregas e deploys realizados no projeto, associa
 ### 🎯 Próximos Passos
 - Cadastrar as próximas categorias enviadas pelo proprietário (Eletrônicos & Acessórios, Vídeo Games).
 
+---
+
+## 🔀 Pull Request #10: Cadastro de Produtos Modelo para Eletrônicos & Acessórios e Vídeo Games
+- **Status:** Merged / Deployed
+- **Data:** 20/08/2026
+
+### 🔗 Issue Relacionada
+- Closes #20 (Cadastro de Produtos Modelo para Eletrônicos & Acessórios e Vídeo Games)
+
+### 📝 O que mudou?
+- Cadastrados 6 modelos de alta procura na categoria `eletronicos-acessorios`:
+  1. `Power Bank Portátil 10.000mAh Turbo com 4 Cabos Embutidos` (R$ 79,99)
+  2. `Power Bank MagSafe por Indução Magnética 5.000mAh Ultra Slim` (R$ 89,99)
+  3. `Suporte Veicular Magnético 360° para Celular (Grade de Ar)` (R$ 29,99)
+  4. `Hub Adaptador USB-C 5 em 1 Alumínio (HDMI 4K, USB 3.0, PD 100W)` (R$ 89,99)
+  5. `Ring Light LED 26cm (10 Pol) com Tripé Ajustável e Suporte de Celular` (R$ 49,99)
+  6. `Mini Teclado Sem Fio com Touchpad e LED RGB para Smart TV e TV Box` (R$ 39,99)
+- Cadastrados 5 modelos gamers e consoles na categoria `video-games`:
+  1. `Controle Sem Fio Bluetooth para PS4 e PC com Touchpad e Vibração Dupla` (R$ 99,99)
+  2. `Controle Gamer para Celular Bluetooth com Suporte Telescópico` (R$ 119,99)
+  3. `Base Dock de Carregamento Duplo para Controles PS5 com Display LED` (R$ 59,99)
+  4. `Mini Vídeo Game Portátil Retrô com 400 Jogos Clássicos + Cabo TV` (R$ 49,99)
+  5. `Capa Protetora de Silicone Anti-Impacto + 2 Grips para Analógicos` (R$ 24,99)
+- Todas as 6 categorias da Christian Multi Store agora contam com catálogo completo, totalizando 47 produtos com especificações detalhadas, fotos em alta resolução, compatibilidade e garantia de 90 dias.
+
+### 🧪 Como foi validado?
+- `compile_applet` executado com status de sucesso.
+- `lint_applet` executado com TypeScript 0 erros (`tsc --noEmit`).
+- Testada a filtragem por todas as categorias do site: "Todos os Produtos" (47), "Fones Bluetooth" (11), "Fones de Ouvido com Fio" (4), "Smartwatches" (9), "Caixas de Som" (3), "Cabos & Carregadores" (9), "Eletrônicos & Acessórios" (6) e "Vídeo Games & Acessórios" (5).
+
+### ⚠️ Riscos e Limitações
+- Nenhuma limitação identificada.
+
+### 🎯 Próximos Passos
+- Quando o proprietário enviar lotes específicos ou fotos personalizadas adicionais para estas categorias, os dados podem ser refinados pontualmente.
+
+
 
 
 

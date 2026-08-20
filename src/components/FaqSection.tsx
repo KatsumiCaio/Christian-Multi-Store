@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, HelpCircle, MessageCircle } from 'lucide-react';
+import { ChevronDown, HelpCircle } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { FAQS } from '../data/faq';
 import { STORE_INFO } from '../data/products';
 
@@ -100,7 +101,7 @@ export const FaqSection: React.FC = () => {
             onClick={handleOpenWhatsApp}
             className="px-6 py-3.5 rounded-2xl bg-[#25D366] hover:bg-[#20ba5a] text-black font-black text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 shadow-[0_0_20px_rgba(37,211,102,0.3)] shrink-0 transition-all cursor-pointer active:scale-[0.98]"
           >
-            <MessageCircle className="w-4 h-4 fill-current" />
+            <WhatsAppIcon className="w-5 h-5 fill-current" />
             <span>Falar no WhatsApp</span>
           </button>
         </div>
