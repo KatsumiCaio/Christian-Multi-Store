@@ -189,6 +189,35 @@ Este arquivo registra todas as entregas e deploys realizados no projeto, associa
 ### 🎯 Próximos Passos
 - Cadastrar as próximas categorias enviadas pelo proprietário (Caixas de Som, Cabos & Carregadores, Eletrônicos & Acessórios, Vídeo Games).
 
+---
+
+## 🔀 Pull Request #7: Cadastro Oficial da Linha de Caixas de Som Bluetooth 10W
+- **Status:** Merged / Deployed
+- **Data:** 20/08/2026
+
+### 🔗 Issue Relacionada
+- Closes #17 (Cadastro oficial da linha de Caixas de Som Bluetooth 10W)
+
+### 📝 O que mudou?
+- Cadastrados os 3 modelos oficiais de caixas de som Bluetooth Eletro Mex em `src/data/products.ts`:
+  1. `Caixa de Som Bluetooth Eletro Mex 10W com LED RGB Redonda` (R$ 59,99)
+  2. `Caixa de Som Bluetooth Eletro Mex 10W com LED RGB Quadrada` (R$ 49,99)
+  3. `Caixa de Som Bluetooth Eletro Mex 10W À Prova d’Água com Alça` (R$ 89,99)
+- Detalhadas as características acústicas e funcionais: 10W de potência real, iluminação LED RGB dinâmica que troca de cores, entradas para Pen Drive USB, cartão de memória Micro SD, auxiliar P2, rádio FM, alças anatômicas de transporte e vedação à prova d'água no modelo outdoor.
+- Inseridas fotos em alta definição com progressive lazy loading e skeletons.
+
+### 🧪 Como foi validado?
+- `compile_applet` executado com status de sucesso.
+- `lint_applet` executado com TypeScript 0 erros (`tsc --noEmit`).
+- Testada filtragem pela categoria "Caixas de Som" (3 itens na categoria, 23 itens no catálogo total), modal de visualização rápida e adição ao carrinho com cálculo de frete e cupom.
+
+### ⚠️ Riscos e Limitações
+- Nenhuma limitação técnica identificada.
+
+### 🎯 Próximos Passos
+- Cadastrar as próximas categorias enviadas pelo proprietário (Cabos & Carregadores, Eletrônicos & Acessórios, Vídeo Games, Fones com Fio).
+
+
 
 
 

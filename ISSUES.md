@@ -152,4 +152,14 @@ Este documento centraliza todas as **Issues planejadas e categorizadas** para o 
 - **Ação:** Inserir os smartwatches no array `PRODUCTS` com valores exatos (R$), funções de monitoramento de saúde, integração com Strava, chamadas Bluetooth, pulseiras extras e fotos em alta resolução.
 - **Arquivos afetados:** `src/data/products.ts`.
 
+---
+
+### [Issue #17] [Nova função / Conteúdo] Cadastro Oficial da Linha de Caixas de Som Bluetooth 10W
+- **Tipo:** `Nova função` (Feature)
+- **Prioridade:** Alta
+- **Descrição:** Cadastro completo dos 3 modelos oficiais de caixas de som Eletro Mex de 10W (Caixa Redonda com LED RGB, Caixa Quadrada com LED RGB e Caixa à Prova d'Água 10W com alça).
+- **Ação:** Inserir as caixas de som no array `PRODUCTS` sob a categoria `caixas-som` com valores exatos (R$), potência 10W, iluminação LED que troca de cor, entradas USB/SD/P2, rádio FM, alça de transporte e fotos em alta resolução.
+- **Arquivos afetados:** `src/data/products.ts`.
+
+
 
