@@ -378,6 +378,34 @@ Este arquivo registra todas as entregas e deploys realizados no projeto, associa
 ### 🎯 Próximos Passos
 - Ícones ativos e prontos para navegação em desktop, mobile e instalação na tela inicial.
 
+---
+
+## 🔀 Pull Request #13: Compartilhamento Rápido de Produtos (Web Share API & Clipboard)
+- **Status:** Merged / Deployed
+- **Data:** 21/08/2026
+
+### 🔗 Issue Relacionada
+- Closes #23 (Compartilhamento Rápido de Produtos)
+
+### 📝 O que mudou?
+- **Botão de Compartilhamento no Modal de Detalhes (`ProductDetailModal.tsx`)**:
+  - Inserido botão discreto e elegante com ícone `Share2` no topo direito do modal.
+  - No mobile / navegadores suportados: aciona nativamente a `navigator.share` da Web Share API, permitindo enviar direto para WhatsApp, Instagram, Telegram, e-mail ou contatos do aparelho.
+  - No desktop / navegadores sem suporte: copia o nome do produto, valor em R$ e link diretamente para a Área de Transferência via `navigator.clipboard`.
+  - Feedback visual instantâneo com transformação para ícone `Check`, cor esmeralda (`#10B981`) e texto "Link Copiado!" por 2,5 segundos.
+
+### 🧪 Como foi validado?
+- `compile_applet` executado com status de sucesso.
+- `lint_applet` (`tsc --noEmit`) sem erros de tipagem.
+- Testada a montagem do texto formatado e o tratamento de exceção `AbortError` (quando o usuário fecha o menu nativo sem selecionar app).
+
+### ⚠️ Riscos e Limitações
+- Em navegadores antigos sem suporte a `navigator.clipboard`, o fallback trata exceções de forma segura sem quebrar o componente.
+
+### 🎯 Próximos Passos
+- Monitorar a taxa de uso do compartilhamento em testes de usabilidade.
+
+
 
 
 

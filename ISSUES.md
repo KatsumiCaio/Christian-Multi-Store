@@ -197,6 +197,16 @@ Este documento centraliza todas as **Issues planejadas e categorizadas** para o 
 - **Ação:** Criar `public/favicon.svg`, `public/icon.svg`, `public/site.webmanifest` e atualizar o cabeçalho de `index.html`.
 - **Arquivos afetados:** `public/favicon.svg`, `public/icon.svg`, `public/site.webmanifest`, `index.html`.
 
+---
+
+### [Issue #23] [Nova função / UX] Compartilhamento Rápido de Produtos (Web Share API & Área de Transferência)
+- **Tipo:** `Nova função` (Feature)
+- **Prioridade:** Média
+- **Descrição:** Adicionar botão discreto e elegante de compartilhamento de produto no modal de detalhes (`ProductDetailModal`). Integrar suporte nativo à Web Share API em dispositivos compatíveis (mobile) e fallback com cópia para a área de transferência com feedback visual ("Link copiado!") no desktop.
+- **Ação:** Implementar função `handleShareProduct` com `navigator.share` e `navigator.clipboard`, exibição de estado de feedback tátil e estilização harmônica com o Dark Minimal Tech.
+- **Arquivos afetados:** `src/components/ProductDetailModal.tsx`.
+
+
 
 
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Star, Plus, Minus, Check, ShieldCheck, Truck, Zap } from 'lucide-react';
+import { X, Star, Plus, Minus, Check, ShieldCheck, Truck, Zap, Share2, Copy } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { Product } from '../types';
 import { STORE_INFO } from '../data/products';
@@ -19,6 +19,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 }) => {
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   const handleAdd = () => {
     if (!product) return;
@@ -37,6 +38,42 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
       `Olá Christian! Gostaria de comprar o produto direto pelo WhatsApp:\n- ${quantity}x ${product.name} (R$ ${totalItemPrice.toFixed(2).replace('.', ',')})\n\nPor favor, me informe o valor do frete e opções de pagamento!`
     );
     window.open(`https://wa.me/55${STORE_INFO.whatsapp}?text=${text}`, '_blank');
+  };
+
+  const handleShareProduct = async () => {
+    if (!product) return;
+
+    const shareTitle = `${product.name} | Christian Multi Store`;
+    const shareText = `Olha esse ${product.name} por R$ ${product.price.toFixed(2).replace('.', ',')} na Christian Multi Store!`;
+    const shareUrl = window.location.origin + window.location.pathname;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: shareTitle,
+          text: shareText,
+          url: shareUrl,
+        });
+        return;
+      } catch (error) {
+        // Se o usuário cancelou o diálogo de compartilhamento, não faz fallback para cópia
+        if ((error as Error).name === 'AbortError') {
+          return;
+        }
+      }
+    }
+
+    // Fallback: Copiar dados formatados para a Área de Transferência
+    try {
+      const clipboardContent = `${shareText}\nConfira aqui: ${shareUrl}`;
+      await navigator.clipboard.writeText(clipboardContent);
+      setIsCopied(true);
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 2500);
+    } catch (err) {
+      console.error('Falha ao copiar link:', err);
+    }
   };
 
   return (
@@ -60,14 +97,41 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             transition={{ type: 'spring', stiffness: 120, damping: 20 }}
             className="relative w-full max-w-3xl bg-[#13151F] border border-white/10 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(0,229,255,0.25)] z-10 my-auto glass"
           >
-            {/* Close Button */}
-            <button
-              onClick={onClose}
-              aria-label="Fechar detalhes"
-              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-[#090A0F]/90 text-slate-400 hover:text-white hover:bg-white/10 border border-white/10 transition-all cursor-pointer active:scale-[0.95]"
-            >
-              <X className="w-5 h-5" />
-            </button>
+            {/* Top Action Bar: Share & Close */}
+            <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
+              {/* Share Button with Live Feedback */}
+              <button
+                onClick={handleShareProduct}
+                title="Compartilhar produto"
+                aria-label="Compartilhar produto com amigos ou redes sociais"
+                className={`h-9 px-3 rounded-full flex items-center gap-1.5 transition-all duration-200 cursor-pointer active:scale-[0.95] text-xs font-bold ${
+                  isCopied
+                    ? 'bg-emerald-500/20 border border-emerald-500/50 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)]'
+                    : 'bg-[#090A0F]/90 text-slate-300 hover:text-[#00E5FF] hover:bg-white/10 border border-white/10'
+                }`}
+              >
+                {isCopied ? (
+                  <>
+                    <Check className="w-4 h-4 text-emerald-400 stroke-[2.5]" />
+                    <span className="text-[11px] font-black text-emerald-400">Link Copiado!</span>
+                  </>
+                ) : (
+                  <>
+                    <Share2 className="w-4 h-4 text-slate-300 group-hover:text-[#00E5FF]" />
+                    <span className="hidden sm:inline text-[11px] font-medium text-slate-300">Compartilhar</span>
+                  </>
+                )}
+              </button>
+
+              {/* Close Button */}
+              <button
+                onClick={onClose}
+                aria-label="Fechar detalhes"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-[#090A0F]/90 text-slate-400 hover:text-white hover:bg-white/10 border border-white/10 transition-all cursor-pointer active:scale-[0.95]"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 max-h-[85vh] overflow-y-auto">
               {/* Left Column: Image & Badges */}
@@ -100,7 +164,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               <div className="p-6 sm:p-8 flex flex-col justify-between space-y-6">
                 <div className="space-y-4">
                   {/* Category & Rating */}
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between pr-20 sm:pr-28">
                     <span className="text-xs uppercase tracking-widest text-[#00E5FF] font-black">
                       {product.categoryName}
                     </span>
@@ -236,3 +300,4 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
     </AnimatePresence>
   );
 };
+
