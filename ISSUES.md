@@ -206,6 +206,25 @@ Este documento centraliza todas as **Issues planejadas e categorizadas** para o 
 - **Ação:** Implementar função `handleShareProduct` com `navigator.share` e `navigator.clipboard`, exibição de estado de feedback tátil e estilização harmônica com o Dark Minimal Tech.
 - **Arquivos afetados:** `src/components/ProductDetailModal.tsx`.
 
+---
+
+### [Issue #24] [Nova função / UX] Seção de Vistos Recentemente (LocalStorage)
+- **Tipo:** `Nova função` (Feature)
+- **Prioridade:** Média
+- **Descrição:** Implementar rastreamento inteligente no cliente dos últimos produtos abertos pelo usuário (armazenado em `localStorage`), e exibir uma seção elegante e horizontalmente navegável com os itens visualizados recentemente, facilitando o retorno imediato ao produto sem precisar buscar novamente no catálogo.
+- **Ação:** Criar componente `RecentlyViewed.tsx`, gerenciar a persistência em `App.tsx`, permitir abertura rápida de detalhes e adição direta ao carrinho.
+- **Arquivos afetados:** `src/components/RecentlyViewed.tsx`, `src/App.tsx`.
+
+---
+
+### [Issue #25] [Melhoria / SEO] Otimização de SEO Local & Microdados Schema.org (LocalBusiness / ElectronicsStore)
+- **Tipo:** `Melhoria` (Enhancement)
+- **Prioridade:** Alta
+- **Descrição:** Implementação de microdados estruturados JSON-LD Schema.org (`LocalBusiness` / `ElectronicsStore`) para potencializar o ranqueamento orgânico em buscas locais ("Games em Itapetininga", "Fones bluetooth Itapetininga", "Loja Gamer Itapetininga") e presença regional em São Paulo com cobertura de envio para todo o Brasil. Inclusão de meta tags geográficas (`geo.region`, `geo.placename`, `geo.position`), Open Graph / Twitter Cards e atualização dos dados cadastrais da loja em `STORE_INFO`.
+- **Ação:** Inserir JSON-LD e meta tags completas em `index.html`, e alinhar `STORE_INFO` em `src/data/products.ts` com dados precisos de Itapetininga/SP.
+- **Arquivos afetados:** `index.html`, `src/data/products.ts`, `ISSUES.md`.
+
+
 
 
 

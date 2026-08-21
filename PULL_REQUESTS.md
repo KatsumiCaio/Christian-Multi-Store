@@ -405,6 +405,68 @@ Este arquivo registra todas as entregas e deploys realizados no projeto, associa
 ### 🎯 Próximos Passos
 - Monitorar a taxa de uso do compartilhamento em testes de usabilidade.
 
+---
+
+## 🔀 Pull Request #14: Navegação Inteligente de Vistos Recentemente (LocalStorage)
+- **Status:** Merged / Deployed
+- **Data:** 21/08/2026
+
+### 🔗 Issue Relacionada
+- Closes #24 (Seção de Vistos Recentemente)
+
+### 📝 O que mudou?
+- **Componente `RecentlyViewed.tsx`**:
+  - Criada seção compacta e visualmente integrada logo abaixo do catálogo com os itens visitados.
+  - Exibe miniaturas em alta definição (`ImageWithSkeleton`), nome, badge de categoria, preço em destaque (`#00E5FF`) e botão de adição rápida ao carrinho.
+  - Botão de controle para limpar histórico ("Limpar histórico") a qualquer momento.
+- **Gerenciamento de Estado & Persistência Local (`App.tsx`)**:
+  - Implementado listener em `handleTrackViewProduct` que insere o item no topo da lista sem duplicatas (mantendo até 6 produtos).
+  - Persistência automática em `localStorage` sob a chave `christian_multistore_recently_viewed_v1`.
+  - Seção só renderiza na interface se houver itens no histórico, evitando poluição visual.
+
+### 🧪 Como foi validado?
+- `compile_applet` executado com status de sucesso.
+- `lint_applet` (`tsc --noEmit`) verificado com 0 erros.
+- Testada a persistência no `localStorage`, a exclusão do histórico e a adição direta ao carrinho a partir dos itens recentes.
+
+### ⚠️ Riscos e Limitações
+- Nenhuma limitação técnica identificada.
+
+### 🎯 Próximos Passos
+- Catálogo pronto para navegação fluida de clientes.
+
+---
+
+## 🔀 Pull Request #15: Otimização de SEO Local & Microdados Schema.org (LocalBusiness & ElectronicsStore)
+- **Status:** Merged / Deployed
+- **Data:** 21/08/2026
+
+### 🔗 Issue Relacionada
+- Closes #25 (Otimização de SEO Local & Microdados Schema.org)
+
+### 📝 O que mudou?
+- **Microdados Estruturados JSON-LD (`index.html`)**:
+  - Implementado schema `LocalBusiness` e `ElectronicsStore` conforme as diretrizes do Schema.org e Google Search Central.
+  - Mapeadas propriedades de nome, telefone WhatsApp `(15) 99825-3627`, localização em Itapetininga / SP, coordenadas geográficas (`-23.5855`, `-48.0531`), horário de atendimento, redes sociais e catálogo de categorias.
+  - Configurada a propriedade `areaServed` abrangendo Itapetininga, Região de Sorocaba, Estado de São Paulo e envio nacional (Brasil).
+- **Meta Tags Geográficas & Open Graph / Twitter (`index.html`)**:
+  - Inseridas tags `geo.region` (BR-SP), `geo.placename` (Itapetininga), `geo.position` e `ICBM`.
+  - Adicionadas meta tags de Open Graph e Twitter Cards para renderização de prévias enriquecidas ao compartilhar links no WhatsApp, Telegram e redes sociais.
+- **Sincronização de Dados Cadastrais (`src/data/products.ts`)**:
+  - Atualizado `STORE_INFO` com `location`, `city: 'Itapetininga'`, `state: 'SP'` e `country: 'Brasil'`.
+
+### 🧪 Como foi validado?
+- `compile_applet` executado com status de sucesso.
+- `lint_applet` (`tsc --noEmit`) sem erros.
+- Validação sintática do bloco JSON-LD Schema.org conforme especificação W3C / Google Rich Results.
+
+### ⚠️ Riscos e Limitações
+- Nenhuma limitação técnica identificada.
+
+### 🎯 Próximos Passos
+- Monitorar a indexação pelo Google Search Console quando o domínio personalizado for publicado.
+
+
 
 
 

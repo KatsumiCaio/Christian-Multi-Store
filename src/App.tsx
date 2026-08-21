@@ -11,11 +11,13 @@ import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { ToastNotification } from './components/ToastNotification';
+import { RecentlyViewed } from './components/RecentlyViewed';
 import { PRODUCTS, CATEGORIES, STORE_INFO } from './data/products';
 import { CategoryId, Product, CartItem } from './types';
 import { Sparkles, SlidersHorizontal, Search, ArrowUpDown, RefreshCcw } from 'lucide-react';
 
 const CART_STORAGE_KEY = 'christian_multistore_cart_v1';
+const RECENTLY_VIEWED_KEY = 'christian_multistore_recently_viewed_v1';
 
 export default function App() {
   // State
@@ -37,6 +39,19 @@ export default function App() {
   });
   const [isCartOpen, setIsCartOpen] = useState(false);
 
+  // Recently Viewed state with localStorage initialization
+  const [recentlyViewed, setRecentlyViewed] = useState<Product[]>(() => {
+    try {
+      const saved = localStorage.getItem(RECENTLY_VIEWED_KEY);
+      if (saved) {
+        return JSON.parse(saved);
+      }
+    } catch (e) {
+      console.error('Erro ao ler produtos vistos recentemente:', e);
+    }
+    return [];
+  });
+
   // Sync cart with localStorage
   useEffect(() => {
     try {
@@ -45,6 +60,28 @@ export default function App() {
       console.error('Erro ao salvar carrinho no localStorage:', e);
     }
   }, [cartItems]);
+
+  // Sync recently viewed with localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem(RECENTLY_VIEWED_KEY, JSON.stringify(recentlyViewed));
+    } catch (e) {
+      console.error('Erro ao salvar produtos vistos recentemente:', e);
+    }
+  }, [recentlyViewed]);
+
+  const handleTrackViewProduct = (product: Product) => {
+    setSelectedProduct(product);
+    setRecentlyViewed((prev) => {
+      const filtered = prev.filter((p) => p.id !== product.id);
+      // Mantém os 6 itens mais recentes
+      return [product, ...filtered].slice(0, 6);
+    });
+  };
+
+  const handleClearRecentlyViewed = () => {
+    setRecentlyViewed([]);
+  };
   
   // Modals & Notifications
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -284,7 +321,7 @@ export default function App() {
                     key={product.id}
                     product={product}
                     onAddToCart={(p) => handleAddToCart(p, 1)}
-                    onQuickView={(p) => setSelectedProduct(p)}
+                    onQuickView={(p) => handleTrackViewProduct(p)}
                   />
                 ))}
               </div>
@@ -333,6 +370,14 @@ export default function App() {
 
           </div>
         </section>
+
+        {/* 3.5. Recently Viewed Items (LocalStorage Navigation) */}
+        <RecentlyViewed
+          products={recentlyViewed}
+          onSelectProduct={(p) => setSelectedProduct(p)}
+          onAddToCart={(p) => handleAddToCart(p, 1)}
+          onClearHistory={handleClearRecentlyViewed}
+        />
 
         {/* 4. Store Key Differentiators */}
         <Diferenciais />

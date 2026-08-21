@@ -1637,6 +1637,9 @@ export const STORE_INFO = {
   instagram: 'christian_multistore',
   instagramUrl: 'https://instagram.com/christian_multistore',
   followers: '2.475+',
-  location: 'São Paulo - Brasil',
+  location: 'Itapetininga - SP (Envio para todo o Brasil)',
+  city: 'Itapetininga',
+  state: 'SP',
+  country: 'Brasil',
   shippingText: '🇧🇷 Enviamos para todo o Brasil com código de rastreio',
 };
